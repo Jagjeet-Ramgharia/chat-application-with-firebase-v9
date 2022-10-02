@@ -5,7 +5,7 @@ import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
 import {ref ,uploadBytesResumable, getDownloadURL} from "firebase/storage"
 import { doc, setDoc } from "firebase/firestore";
 import './style.scss'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export const Register = () => {
   const [err,setError] = useState(false)
@@ -81,7 +81,7 @@ export const Register = () => {
           <button>SignUp</button>
           {err && <span style={{color:"red"}}>Something Went Wrong</span>}
         </form>
-        <p>You do have account? Login</p>
+        <p>You do have account? <Link to="/login">Login</Link></p>
       </div>
     </div>
   )
